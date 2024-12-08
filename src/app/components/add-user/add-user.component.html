@@ -1,0 +1,57 @@
+<div class="pad-top">
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" />
+            <mat-error *ngIf="userForm.get('firstName')?.invalid && userForm.get('firstName')?.touched">
+                First name is required.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName" />
+            <mat-error *ngIf="userForm.get('lastName')?.invalid && userForm.get('lastName')?.touched">
+                Last name is required.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Age</mat-label>
+            <input matInput type="number" formControlName="age" />
+            <mat-error *ngIf="userForm.get('age')?.invalid && userForm.get('age')?.touched">
+                Age must be a number between 18 and 100.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" />
+            <mat-error *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+                Enter a valid email.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Phone</mat-label>
+            <input matInput formControlName="phone" />
+            <mat-error *ngIf="userForm.get('phone')?.invalid && userForm.get('phone')?.touched">
+                Phone number is required.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Role</mat-label>
+            <mat-select formControlName="role">
+                <mat-option value="admin">Admin</mat-option>
+                <mat-option value="moderator">Moderator</mat-option>
+            </mat-select>
+            <mat-error *ngIf="userForm.get('role')?.invalid && userForm.get('role')?.touched">
+                Role is required.
+            </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">Add User</button>
+    </form>
+</div>

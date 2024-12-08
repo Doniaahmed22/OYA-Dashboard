@@ -1,0 +1,55 @@
+<div *ngIf="userCart?.products?.length > 0" class="products w-100 px-3 pad-top">
+    <!-- العناوين -->
+    <div class="row text-white py-2 rounded bg-text">
+        <div class="col-3 text-center innerText2">Image</div>
+        <div class="col-2 text-center innerText2">Title</div>
+        <div class="col-2 text-center innerText2">Price</div>
+        <div class="col-2 text-center innerText2">Quantity</div>
+        <div class="col-2 text-center innerText2">Total</div>
+    </div>
+
+    <!-- العناصر -->
+    <div class="row py-3 border-bottom" *ngFor="let product of userCart.products">
+        <div class="col-3 text-center align-self-center">
+            <img [src]="product.thumbnail" alt="Thumbnail" class="img-fluid w-100 h-75 rounded" />
+        </div>
+        <div class="col-2 text-center align-self-center">
+            <span class="innerText">{{ product.title | cuttext:2}}</span>
+        </div>
+        <div class="col-2 text-center align-self-center">
+            <span class="innerText">{{ product.price }}</span>
+        </div>
+        <div class="col-2 text-center align-self-center">
+            <span class="innerText">{{ product.quantity }}</span>
+        </div>
+        <div class="col-2 text-center align-self-center">
+            <span class="innerText">{{ product.total | number:'1.2-2' }}</span>
+        </div>
+        
+    </div>
+
+    <div class="row py-3">
+        <div class="col-2 text-center align-self-center">
+            <h3 class="p-0 m-0 text">total Quantity</h3>
+
+        </div>
+
+        <div class="col-3 text-center align-self-center">
+            <span class="p-0 m-0 text">{{ userCart.totalQuantity }}</span>
+        </div>
+
+        <div class="col-2"></div>
+
+        <div class="col-2 text-center align-self-center">
+            <h3 class="p-0 m-0 text">total Price</h3>
+        </div>
+
+        <div class="col-3 text-center align-self-center">
+            <span class="p-0 m-0 text">{{ userCart.total | number:'1.2-2' }}</span>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!userCart?.products?.length">
+    <h2 class="text-center my-5 text">No carts found for this user.</h2>
+</div>

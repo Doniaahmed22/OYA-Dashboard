@@ -1,0 +1,48 @@
+<nav class="w-100 vh-100 ">
+    <h1> <a class="nav-link d-flex align-items-center mb-4 px-3" href="#">
+            <!-- <img class="w-20" src="../../../assets/apple-touch-icon.png" alt=""> -->
+            <h2 class="mb-0 text">OYA Dashboard</h2>
+        </a>
+    </h1>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" routerLink="/home" routerLinkActive="active">
+                <i class="fa-solid fa-chart-simple text"></i>
+                <p class="p-0 m-0 ms-2 text">Analytics</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" routerLink="/products" routerLinkActive="active">
+                <i class="fa-solid fa-box text"></i>
+                <p class="p-0 m-0 ms-2 text">Products</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" routerLink="/carts" routerLinkActive="active">
+                <i class="fa-solid fa-arrow-up-short-wide text"></i>
+                <p class="p-0 m-0 ms-2 text">Carts</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" routerLink="/users" routerLinkActive="active">
+                <i class="fa-solid fa-users text"></i>
+                <p class="p-0 m-0 ms-2 text">users</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" routerLink="/categories" routerLinkActive="active">
+                <i class="fa-solid fa-table-cells-large text"></i>
+                <p class="p-0 m-0 ms-2 text">categories</p>
+            </a>
+        </li>
+        <hr class=" custom-hr">
+        
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" role="button"  routerLinkActive="active" (click)="signout()">
+                <i class="fa-solid fa-right-from-bracket text"></i>
+                <p class="p-0 m-0 ms-2 text">sign out</p>
+            </a>
+        </li>
+
+    </ul>
+</nav>

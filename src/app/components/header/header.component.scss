@@ -1,0 +1,55 @@
+.wid-10 {
+    width: 8%;
+}
+
+.head {
+    // width: 100%;
+    height: 50px;
+    position: fixed;
+    z-index: 9999999999999;
+}
+
+/* Theme Toggle Button */
+.theme-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .theme-button:hover {
+    transform: scale(1.2);
+  }
+  
+  .bord{
+    border: 1px solid blue;
+  }
+
+
+  /* في styles.css أو داخل مكون الـ header نفسه */
+@media (min-width: 768px) {
+  header {
+    width: 100%;  /* في الشاشات الكبيرة، يأخذ 100% من المساحة داخل col-9 */
+  }
+
+  .padng{
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    width: 100%;  /* في الشاشات الصغيرة، يأخذ 100% من المساحة داخل col-12 */
+  }
+
+  .padng{
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  // .padng2{
+  //   margin-left: 10px;
+  //   overflow: hidden;
+  // }
+}

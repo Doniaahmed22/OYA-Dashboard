@@ -1,0 +1,71 @@
+<div class="pad-top">
+  <div class="details-container ">
+    <mat-card class="user-card white">
+      <div class="profile">
+        <img [src]="user.image" alt="User Image" />
+        <h2 class="text">{{ user.firstName }} {{ user.lastName }}</h2>
+        <p class="text">{{ user.role }}</p>
+      </div>
+    </mat-card>
+
+    <mat-card class="details-card white">
+      <h3 class="bold text">Personal Information</h3>
+      <mat-list>
+        <mat-list-item class="text">Age: {{ user.age }}</mat-list-item>
+        <mat-list-item class="text">Gender: {{ user.gender }}</mat-list-item>
+        <mat-list-item class="text">Email: {{ user.email }}</mat-list-item>
+        <mat-list-item class="text">Phone: {{ user.phone }}</mat-list-item>
+        <mat-list-item class="text">Birth Date: {{ user.birthDate | date }}</mat-list-item>
+        <mat-list-item class="text">Blood Group: {{ user.bloodGroup }}</mat-list-item>
+        <mat-list-item class="text">Eye Color: {{ user.eyeColor }}</mat-list-item>
+        <mat-list-item class="text">Hair: {{ user.hair.color }} ({{ user.hair.type }})</mat-list-item>
+      </mat-list>
+    </mat-card>
+
+    <mat-card class="details-card white">
+      <h3 class="bold text">Address</h3>
+      <mat-list>
+        <mat-list-item class="white">Address: {{ user.address.address }}</mat-list-item>
+        <mat-list-item class="white">City: {{ user.address.city }}</mat-list-item>
+        <mat-list-item class="white">State: {{ user.address.state }} ({{ user.address.stateCode }})</mat-list-item>
+        <mat-list-item class="white">Postal Code: {{ user.address.postalCode }}</mat-list-item>
+        <mat-list-item class="white">Country: {{ user.address.country }}</mat-list-item>
+      </mat-list>
+    </mat-card>
+
+    <mat-card class="details-card white">
+      <h3 class="bold text">Company</h3>
+      <mat-list>
+        <mat-list-item class="text">Name: {{ user.company.name }}</mat-list-item>
+        <mat-list-item class="text">Department: {{ user.company.department }}</mat-list-item>
+        <mat-list-item class="text">Title: {{ user.company.title }}</mat-list-item>
+      </mat-list>
+    </mat-card>
+
+    <mat-card class="details-card white">
+      <h3 class="bold text">Bank Details</h3>
+      <mat-list>
+        <mat-list-item class="text">Card Type: {{ user.bank.cardType }}</mat-list-item>
+        <mat-list-item class="text">Card Number: {{ user.bank.cardNumber }}</mat-list-item>
+        <mat-list-item class="text">Card Expire: {{ user.bank.cardExpire }}</mat-list-item>
+        <mat-list-item class="text">Currency: {{ user.bank.currency }}</mat-list-item>
+        <mat-list-item class="text">IBAN: {{ user.bank.iban }}</mat-list-item>
+      </mat-list>
+    </mat-card>
+
+    <mat-card class="details-card white">
+      <h3 class="bold text">Crypto Wallet</h3>
+      <mat-list>
+        <mat-list-item class="text">Coin: {{ user.crypto.coin }}</mat-list-item>
+        <mat-list-item class="text">Wallet: {{ user.crypto.wallet }}</mat-list-item>
+        <mat-list-item class="text">Network: {{ user.crypto.network }}</mat-list-item>
+      </mat-list>
+    </mat-card>
+
+    <mat-card-actions>
+      <button mat-raised-button class="edit-btn btn" (click)="editUser(user.id)">Edit</button>
+      <button mat-raised-button color="warn" class="ms-2" (click)="deleteUser(user.id)">Delete</button>
+    </mat-card-actions>
+
+  </div>
+</div>

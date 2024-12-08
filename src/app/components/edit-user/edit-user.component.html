@@ -1,0 +1,55 @@
+<div class="pad-top">
+
+    <form *ngIf="userForm" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <label for="fname" class="text">First Name:</label>
+        <input id="fname" name="firstName" formControlName="firstName" class="form-control my-2" required />
+        <div *ngIf="userForm.controls['firstName']?.invalid && userForm.controls['firstName']?.touched"
+            class="text-danger">
+            First name is required.
+        </div>
+
+
+
+        <label for="lname" class="text">Last Name:</label>
+        <input id="lname" name="lastName" formControlName="lastName" class="form-control my-2" required />
+        <div *ngIf="userForm.controls['lastName']?.invalid && userForm.controls['lastName']?.touched"
+            class="text-danger">
+            Last name is required.
+        </div>
+
+
+        <label for="age" class="text">Age:</label>
+        <input id="age" name="age" formControlName="age" class="form-control my-2" required />
+        <div *ngIf="userForm.controls['age']?.invalid && userForm.controls['age']?.touched" class="text-danger">
+            Age is required.
+        </div>
+
+
+        <label for="email" class="text">email:</label>
+        <input id="email" name="email" formControlName="email" class="form-control my-2" required />
+        <div *ngIf="userForm.controls['email']?.invalid && userForm.controls['email']?.touched" class="text-danger">
+            Email is required.
+        </div>
+
+
+        <label for="phone" class="text">phone:</label>
+        <input id="phone" name="phone" formControlName="phone" class="form-control my-2" required />
+        <div *ngIf="userForm.controls['phone']?.invalid && userForm.controls['phone']?.touched" class="text-danger">
+            Phone is required.
+        </div>
+
+
+        <label for="role" class="text">Role</label>
+        <select id="role" formControlName="role" class="form-control my-2" required>
+          <option value="" disabled selected>Select a role</option>
+          <option value="admin">Admin</option>
+          <option value="moderator">Moderator</option>
+        </select>
+        <div *ngIf="userForm.get('role')?.invalid && userForm.get('role')?.touched" style="color: red;">
+          Role is required.
+        </div>
+        <button type="submit" [disabled]="userForm.invalid" class="btn edit-btn w-25 mt-2 p-1">Submit</button>
+
+
+    </form>
+</div>

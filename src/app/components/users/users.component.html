@@ -1,0 +1,62 @@
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8 white pad-top">
+  <!-- الأعمدة -->
+  <ng-container matColumnDef="image">
+    <mat-header-cell *matHeaderCellDef class="text"> Image </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <img [src]="element.image" alt="User Image" class="innerText"
+        style="width: 40px; height: 40px; border-radius: 4px;" />
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef class="text"> Full Name </mat-header-cell>
+    <mat-cell *matCellDef="let element" class="innerText"> {{element.firstName + ' '+ element.lastName }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="role">
+    <mat-header-cell *matHeaderCellDef class="text"> Role </mat-header-cell>
+    <mat-cell *matCellDef="let element" class="innerText"> {{element.role}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef class="text"> Email </mat-header-cell>
+    <mat-cell *matCellDef="let element" class="innerText"> {{element.email}} </mat-cell>
+  </ng-container>
+
+  <!-- العمود المتعلق بالـ Action -->
+  <ng-container matColumnDef="action" class="action p-0">
+    <mat-header-cell *matHeaderCellDef class="text p-0"> Action </mat-header-cell>
+    <mat-cell *matCellDef="let element" class="action-cell p-0">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon class="innerText p-0">more_horiz</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="editUser(element.id)">
+          <mat-icon class="text-yellow">edit</mat-icon>
+          <p class="p-0 m-0 blue">Edit</p>
+        </button>
+        <button mat-menu-item (click)="deleteUser(element.id)">
+          <mat-icon class="text-yellow">delete</mat-icon>
+          <p class="p-0 m-0 blue">Delete</p>
+        </button>
+        <button mat-menu-item (click)="userDetails(element.id)">
+          <mat-icon class="text-yellow">info</mat-icon>
+          <p class="p-0 m-0 blue">Details</p>
+        </button>
+        <button mat-menu-item (click)="userCart(element.id)">
+          <mat-icon class="text-yellow">shopping_cart</mat-icon>
+          <p class="p-0 m-0 blue">Cart</p>
+        </button>
+      </mat-menu>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+</mat-table>
+
+
+<mat-paginator class="shadow d-flex justify-content-center text white" [length]="totalItems" [pageSize]="pageSize"
+  [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons (page)="onPageChange($event)">
+</mat-paginator>

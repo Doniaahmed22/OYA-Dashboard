@@ -1,0 +1,63 @@
+.product-details{
+    // padding-top: 60px;
+}
+
+.details-container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .user-card {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .details-card {
+    padding: 15px;
+  }
+  
+  mat-list-item {
+    padding: 5px 0;
+  }
+  
+  .bold{
+    font-weight: bold;
+  }
+
+  .img-control{
+    height: 350px;
+    width: 50%;
+    margin: auto;
+  }
+
+  .reset-styles {
+    all: unset; /* إزالة جميع القيم الافتراضية */
+  }
+  
+  .qr-code-img {
+    height: 150px;
+    width: auto;
+    display: block; /* منع الصورة من التحجيم غير المرغوب */
+    margin: 0 auto;
+  }
+  
+  
+//   mat-card {
+//     max-width: 800px;
+//     margin: 20px auto;
+//     padding: 20px;
+//   }
+//   mat-list-item {
+//     font-size: 14px;
+//   }
+//   table {
+//     width: 100%;
+//     margin-top: 20px;
+//   }

@@ -1,1 +1,391 @@
 /* You can add global styles to this file, and also import other style files */
+
+.main-btn {
+  color: rgb(1, 1, 76) !important;
+  background-color: white;
+  border: 2px solid rgb(1, 1, 76);
+  border-radius: 5px;
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    color: white !important;
+    background-color: rgb(1, 1, 76) !important;
+  }
+}
+
+.main-btn-nd {
+
+  color: white !important;
+  background-color: rgb(1, 1, 76) !important;
+  border: 2px solid rgb(1, 1, 76);
+  border-radius: 5px;
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    color: rgb(1, 1, 76) !important;
+    background-color: white !important;
+  }
+}
+
+// .nav-item{
+//   &:hover{
+//       background-color: rgb(240, 250, 255) !important;
+//       border-radius: 10px;
+//   }
+//   body.dark-mode & {
+//     background-color: rgb(129, 123, 254) !important;
+
+//   }
+
+// }
+
+.active {
+  background-color: rgb(226, 243, 254) !important;
+  // border: 2px solid rgb(1, 1, 76);
+  border-radius: 10px;
+
+  body.dark-mode & {
+    background-color: rgb(59, 62, 249) !important;
+
+  }
+
+}
+
+button:disabled {
+  pointer-events: none;
+  /* يمنع أي تفاعل مثل النقر أو hover */
+  opacity: 0.6;
+  /* يظهر الزر كأنه غير نشط */
+  cursor: not-allowed;
+  /* يعرض مؤشر الفأرة على شكل "غير مسموح" */
+}
+
+button:disabled:hover {
+  background-color: inherit;
+  /* يمنع أي تأثير hover */
+}
+
+
+.toast-success {
+  background-color: rgb(64, 64, 129) !important;
+  /* لون الخلفية */
+  color: #efefef !important;
+  /* لون النص */
+  border: 2px solid #efefef !important;
+  /* لون الإطار */
+  border-radius: 8px !important;
+  /* تعديل الحواف */
+
+}
+
+
+.white {
+  background-color: white;
+
+  body.dark-mode & {
+    background-color: rgb(7, 7, 77);
+
+
+  }
+
+}
+
+.blue {
+  color: #1b049f!important;
+}
+
+.blue2 {
+  color: rgb(7, 7, 100);
+}
+
+.gray {
+  background-color: #ededed;
+
+  body.dark-mode & {
+    background-color: #252365;
+
+
+  }
+}
+
+.custom-header {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+
+
+.text {
+  color: rgb(7, 7, 77);
+
+  body.dark-mode & {
+    color: rgb(255, 255, 255);
+
+  }
+}
+
+.innerText {
+  color: rgb(7, 7, 100);
+
+  body.dark-mode & {
+    color: rgb(255, 255, 255);
+
+  }
+
+}
+
+
+.innerText2 {
+
+  color: rgb(255, 255, 255);
+
+  body.dark-mode & {
+    color: rgb(7, 7, 100);
+
+  }
+
+}
+
+.bg-text {
+  background-color: rgb(7, 7, 77);
+
+  body.dark-mode & {
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+.bg-text2 {
+
+  background-color: rgb(255, 255, 255);
+
+  body.dark-mode & {
+    background-color: rgb(7, 7, 77);
+  }
+}
+
+.inp-bord {
+  border: 1px solid rgb(7, 7, 100);
+
+  body.dark-mode & {
+
+    border: 1px solid rgb(255, 255, 255);
+  }
+}
+
+.edit-btn {
+
+  border: 1px solid rgb(255, 255, 255)!important;
+  background-color: rgb(7, 7, 100)!important;
+  color: white!important;
+
+  body.dark-mode & {
+    border: 1px solid rgb(7, 7, 100)!important;
+    background-color: white!important;
+    color: rgb(7, 7, 100)!important;
+  }
+
+  &:hover {
+    border: 1px solid rgb(7, 7, 100)!important;
+    background-color: white!important;
+    color: rgb(7, 7, 100)!important;
+
+    body.dark-mode & {
+      border: 1px solid rgb(255, 255, 255)!important;
+      background-color: rgb(7, 7, 100)!important;
+      color: white!important;
+
+    }
+
+  }
+
+
+}
+
+html,
+body {
+  height: 100%;
+
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: rgb(255, 255, 255);
+
+  &.dark-mode {
+    background-color: rgb(1, 1, 50);
+  }
+}
+
+html {
+  --mat-paginator-container-text-color: rgb(7, 7, 77);
+  --mat-paginator-enabled-icon-color: rgb(7, 7, 77);
+
+  body.dark-mode & {
+    --mat-paginator-container-text-color: rgb(255, 255, 255) !important;
+    --mat-paginator-enabled-icon-color: rgb(255, 255, 255) !important;
+  }
+}
+
+
+
+.mat-mdc-select {
+  color: rgb(7, 7, 77) !important;
+
+  body.dark-mode & {
+    color: rgb(255, 255, 255) !important;
+
+  }
+}
+
+// body.dark-mode & {}
+
+
+.home-col {
+  color: #1b049f !important;
+
+  body.dark-mode & {
+    color: #ffffff !important;
+  }
+}
+
+.home-col-bg {
+  color: #1b049f !important;
+  background-color: white;
+
+  body.dark-mode & {
+    color: #ffffff !important;
+    background-color: #1b049f;
+
+  }
+}
+
+.mat-mdc-paginator {
+  color: rgb(7, 7, 77);
+
+  body.dark-mode & {
+    color: rgb(255, 255, 255);
+  }
+
+}
+
+.mat-mdc-paginator-range-label {
+  color: rgb(7, 7, 77);
+
+  body.dark-mode & {
+    color: rgb(255, 255, 255);
+  }
+
+}
+
+.mat-mdc-paginator-page-size-label {
+  color: rgb(7, 7, 77);
+
+  body.dark-mode & {
+    color: rgb(255, 255, 255);
+  }
+
+}
+
+
+
+
+
+.nav-item {
+  &:hover {
+    background-color: rgb(240, 250, 255) !important;
+    border-radius: 10px;
+  }
+
+  body.dark-mode &:hover {
+    background-color: rgb(99, 125, 255) !important;
+    border-radius: 10px;
+  }
+}
+
+
+.mdc-list-item__primary-text {
+  color: rgb(7, 7, 77)!important;
+
+  &:hover {
+    color: rgb(7, 7, 77)!important;
+
+  }
+
+  // body.dark-mode & {
+  //   color: rgb(255, 255, 255)!important;
+
+  //   &:hover {
+  //     color: rgb(255, 255, 255)!important;
+
+  //   }
+  // }
+}
+
+.text-yellow{
+  color: #ffcb0d!important;
+}
+
+.mat-mdc-menu-item .mat-icon-no-color, .mat-mdc-menu-item .mat-mdc-menu-submenu-icon{}
+
+
+.pad-top{
+  padding-top: 10px;
+}
+
+
+button[ng-reflect-message="Next page"] svg path {
+  fill: rgb(7,7,77); /* استبدل اللون باللون المطلوب */
+
+  body.dark-mode &{
+    fill: #fff822; /* استبدل اللون باللون المطلوب */
+
+  }
+}
+
+button[ng-reflect-message="Last page"] svg path {
+  fill: rgb(7,7,77); /* استبدل اللون باللون المطلوب */
+
+  body.dark-mode &{
+    fill: #fff822; /* استبدل اللون باللون المطلوب */
+
+  }
+}
+
+button[ng-reflect-message="Previous page"] svg path {
+  fill: rgb(7,7,77); /* استبدل اللون باللون المطلوب */
+
+  body.dark-mode &{
+    fill: #fff822; /* استبدل اللون باللون المطلوب */
+
+  }
+}
+
+button[ng-reflect-message="First page"] svg path {
+  fill: rgb(7,7,77); /* استبدل اللون باللون المطلوب */
+
+  body.dark-mode &{
+    fill: #fff822; /* استبدل اللون باللون المطلوب */
+
+  }
+}
+
+
+button[ng-reflect-message="Next page"][disabled] svg path,
+button[ng-reflect-message="Last page"][disabled] svg path,
+button[ng-reflect-message="Previous page"][disabled] svg path,
+button[ng-reflect-message="First page"][disabled] svg path {
+  fill: #bdbdbd!important; /* لون مطفي عند تعطيل الزر */
+}
+
+
+.mat-mdc-select-arrow{
+  color: rgb(7, 7, 77);
+
+  body.dark-mode & {
+    color: rgb(255, 255, 255);
+  }
+}
+
+
+

@@ -1,0 +1,68 @@
+.category {
+    padding-top: 10px;
+}
+
+.mat-table {
+    border: 1px solid red;
+    /* للتأكد من ظهور الجدول */
+}
+
+
+.expanded-row {
+    background-color: #f5f5f5;
+    transition: height 0.3s ease;
+}
+
+
+.expanded-row {
+    background-color: #f9f9f9;
+}
+
+.inner-table {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+.category .toggle-btn {
+
+    transition: all 0.2s ease-in-out;
+}
+
+.category .toggle-btn:hover {
+    transform: scale(1.1);
+    border: 1px solid #ddd;
+}
+
+// الفرق بين height - max height ???
+
+
+
+@media (max-width:768px) {
+    .del-btn{
+        margin-top: 5px!important;
+    }
+}
+
+@media (min-width:768px) {
+    .del-btn{
+        margin-top: 0px;
+    }
+}
+
+
+.rounded-right{
+    border-top-right-radius: 3px;
+    border-bottom-right-radius:3px;
+}
+
+.rounded-left{
+    border-top-left-radius: 3px;
+    border-bottom-left-radius:3px;
+}

@@ -1,0 +1,46 @@
+<div class="pad-top" [@fadeIn]>
+    <div class="row border rounded shadow-sm bg-text2" *ngFor="let category of categories">
+        <!-- اسم الفئة -->
+        <div class="col-9 d-flex align-items-center py-2 px-3 innerText fw-bold rounded-left ">
+            {{ category.name }}
+        </div>
+
+        <!-- زر التحكم -->
+        <div class="col-3 d-flex justify-content-end align-items-center py-2 px-3 innerText rounded-right">
+            <button 
+                mat-icon-button 
+                class="toggle-btn" 
+                (click)="toggleProducts(category)">
+                <mat-icon>{{ category.isOpen ? 'expand_less' : 'expand_more' }}</mat-icon>
+            </button>
+        </div>
+
+        <!-- المنتجات -->
+        <div *ngIf="category.isOpen" class="products w-100 px-3 py-2 ">
+            <!-- العناوين -->
+            <div class="row bg-text  py-2 rounded">
+                <div class="col-3 text-center innerText2">Image</div>
+                <div class="col-3 text-center innerText2">Title</div>
+                <div class="col-3 text-center innerText2">Stock</div>
+                <div class="col-3 text-center innerText2">Actions</div>
+            </div>
+
+            <!-- العناصر -->
+            <div class="row py-3 border-bottom" *ngFor="let product of category.products">
+                <div class="col-3 text-center align-self-center">
+                    <img [src]="product.thumbnail" alt="Thumbnail" class="img-fluid w-50 h-75 rounded" />
+                </div>
+                <div class="col-3 text-center align-self-center">
+                    <span class="innerText fw-semibold">{{ product.title }}</span>
+                </div>
+                <div class="col-3 text-center align-self-center">
+                    <span class="innerText">{{ product.stock }}</span>
+                </div>
+                <div class="col-3 text-center align-self-center">
+                    <button class="btn edit-btn btn-sm mx-1" (click)="editProduct(product.id)">Edit</button>
+                    <button class="btn btn-outline-danger btn-sm mx-1 del-btn" (click)="deleteProduct(product.id)" >Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

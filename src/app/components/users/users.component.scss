@@ -1,0 +1,94 @@
+.user {
+    padding-top: 10px;
+}
+
+
+// .outer-img{
+//     background-color: blue;
+// }
+
+// @media (max-width: 768px) {
+//     .table-responsive {
+//         overflow-x: auto;
+//     }
+//     .table td, .table th {
+//         padding: 5px; /* تقليص المسافة بين الخلايا */
+//     }
+//     .table img {
+//         width: 100px; /* تقليص حجم الصورة */
+//     }
+//     .table td {
+//         display: block;
+//         width: 100%; /* جعل الأعمدة تأخذ عرض كامل */
+//         text-align: left;
+//     }
+// }
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .table td,
+    .table th {
+        padding: 8px;
+    }
+
+    .details {
+        background-color: #f8f9fa;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .details p {
+        margin: 5px 0;
+    }
+
+    .main-btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .table img {
+        width: 100px;
+        /* تقليص الصورة في الشاشات الصغيرة */
+    }
+}
+
+
+.product {
+    padding-top: 10px;
+}
+
+.phone-column .mat-cell,
+.phone-column .mat-header-cell {
+    width: 250px;
+    /* عدل القيمة لتناسب احتياجك */
+    min-width: 250px;
+}
+
+.hidden{
+    overflow:hidden;
+}
+
+
+
+/* جعل محتويات العمود 'action' يظهر على اليمين */
+.mat-header-cell, .mat-cell {
+    display: flex;
+    justify-content: flex-end; /* محاذاة المحتوى لليمين */
+  }
+  
+  /* إضافة بعض الهوامش لتفادي تلاصق العناصر */
+  .action-cell {
+    padding-right: 16px; /* المسافة بين العنصر وحدود الخلية */
+  }
+  
+
+
+
+
+  

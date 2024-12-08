@@ -1,0 +1,102 @@
+<div class="row mb-3 mx-2 justify-content-between pad-top " [@fadeIn]>
+
+    <input type="text" [formControl]="searchControl" class="w-25 form-control " placeholder="Search..." />
+
+
+    <div class="dropdown w-50">
+        <button class="edit-btn rounded dropdown-toggle w-100 h-100" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fa-solid fa-filter"></i>
+            Filter
+        </button>
+        <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item blue" (click)="applyFilter('title', 'asc')">Sort by Title (A-Z)</a>
+            </li>
+            <li>
+                <a class="dropdown-item blue" (click)="applyFilter('title', 'desc')">Sort by Title (Z-A)</a>
+            </li>
+
+            <li>
+                <a class="dropdown-item blue" (click)="applyFilter('category', 'asc')">Sort by category (A-Z)</a>
+            </li>
+            <li>
+                <a class="dropdown-item blue" (click)="applyFilter('category', 'desc')">Sort by category (Z-A)</a>
+            </li>
+
+            <li>
+                <a class="dropdown-item blue" (click)="applyFilter('price', 'asc')">Sort by Price (Low to High)</a>
+            </li>
+            <li>
+                <a class="dropdown-item blue" (click)="applyFilter('price', 'desc')">Sort by Price (High to Low)</a>
+            </li>
+        </ul>
+    </div>
+
+    <button class="edit-btn rounded w-25 p-1 " (click)="addProduct()">Add</button>
+    
+</div>
+
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8 white">
+    <!-- الأعمدة -->
+    <ng-container matColumnDef="thumbnail">
+        <mat-header-cell *matHeaderCellDef class="text"> Image </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <img [src]="element.thumbnail" alt="Product Image" style="width: 40px; height: 40px; border-radius: 4px;" />
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef class="text"> Product Name </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="innerText"> {{element.title | cuttext :3}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef class="text"> Price </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="innerText"> {{element.price}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="stock">
+        <mat-header-cell *matHeaderCellDef class="text"> Stock </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="innerText"> {{element.stock}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="category">
+        <mat-header-cell *matHeaderCellDef class="text"> Category </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="innerText"> {{element.category}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef class="text"> Action </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon class="innerText">more_horiz</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" class="">
+                <button mat-menu-item (click)="editProduct(element.id)">
+                    <mat-icon class="text-yellow">edit</mat-icon>
+                    <p class="blue p-0 m-0">Edit</p>
+                </button>
+                <button mat-menu-item (click)="deleteProduct(element.id)">
+                    <mat-icon class="text-yellow">delete</mat-icon>
+                    <p class="blue p-0 m-0">delete</p>
+                </button>
+                <button mat-menu-item (click)="productDetails(element.id)">
+                    <mat-icon class="text-yellow">info</mat-icon>
+                    <p class="blue p-0 m-0">details</p>
+                </button>
+            </mat-menu>
+        </mat-cell>
+
+
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+</mat-table>
+
+<mat-paginator  class="shadow d-flex justify-content-center text white" [length]="totalItems" [pageSize]="pageSize"
+    [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons (page)="onPageChange($event)">
+</mat-paginator>

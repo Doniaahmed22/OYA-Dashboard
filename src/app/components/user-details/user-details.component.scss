@@ -1,0 +1,32 @@
+.details{
+    // padding-top: 60px;
+}
+
+.details-container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .user-card {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .details-card {
+    padding: 15px;
+  }
+  
+  mat-list-item {
+    padding: 5px 0;
+  }
+  
+  .bold{
+    font-weight: bold;
+  }

@@ -1,0 +1,62 @@
+<div class="dashboard pad-top" data-aos="fade-up">
+  <div class="container-fluid">
+    <div class="kpi-section home row">
+      <mat-card class="kpi-card col-4 d-flex justify-content-center align-items-center flex-column white" data-aos="fade-right">
+        <h2>Total Orders</h2>
+        <p class="home-col">{{ totalOrders }}</p>
+      </mat-card>
+      <mat-card class="kpi-card col-4 d-flex justify-content-center align-items-center flex-column white" data-aos="fade-up">
+        <h2>Monthly Revenue</h2>
+        <p class="home-col">${{ totalRevenue }}</p>
+      </mat-card>
+      <mat-card class="kpi-card col-4 d-flex justify-content-center align-items-center flex-column white" data-aos="fade-left">
+        <h2>Total Customers</h2>
+        <p class="home-col">{{ totalCustomers }}</p>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="mb-1">
+    <div class="row">
+      <div class="col-md-4" data-aos="zoom-in">
+        <div class="card pe-1 h-100 shadow white">
+          <h3 class="text text-center pt-1">Top Revenue Categories</h3>
+          <canvas baseChart [data]="topRevenueCategoriesChart" [type]="'doughnut'"></canvas>
+        </div>
+      </div>
+
+      <div class="col-md-8 marginInPhone" data-aos="fade-left">
+        <div class="card px-1 h-100 shadow white">
+          <h3 class="text text-center pt-1">Order Heatmap</h3>
+          <canvas class="chart-container2" baseChart [data]="heatmapChartData" [type]="'scatter'"></canvas>
+        </div>
+      </div>
+
+      <div class="col-md-8 my-3" data-aos="fade-up">
+        <div class="card p-1 h-100 shadow white">
+          <h3 class="text text-center pt-1">Time-based Order Analysis</h3>
+          <canvas baseChart [data]="timeBasedOrderChart" [type]="'line'"></canvas>
+        </div>
+      </div>
+
+      <div class="col-md-4 my-3" data-aos="flip-left">
+        <div class="card p-1 h-100 shadow white">
+          <h3 class="text text-center pt-1">Customer Age Group</h3>
+          <canvas class="chart-container2" baseChart [data]="ageGroupChart" [type]="'pie'"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="time-section mt-0 pt-0">
+    <div class="chart-container shadow white" data-aos="fade-right">
+      <h3 class="text">Customer Behavior</h3>
+      <canvas class="chart-container2" baseChart [data]="customerBehaviorChart" [type]="'scatter'"></canvas>
+    </div>
+
+    <div class="chart-container shadow white" data-aos="fade-up">
+      <h3 class="text">Most Demanded Products</h3>
+      <canvas baseChart [data]="mostDemandedProductsChart" [type]="'bar'" class="w-100"></canvas>
+    </div>
+  </div>
+</div>

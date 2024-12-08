@@ -1,0 +1,47 @@
+.fixed-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    /* لضمان ظهوره فوق المحتوى */
+    width: 100%;
+    // background-color: red;
+}
+
+.height {
+    height: 100vh;
+
+}
+
+
+
+.w-20 {
+    width: 18%;
+}
+
+.nav-item {
+    &:hover {
+        background-color: rgb(240, 250, 255) !important;
+        border-radius: 10px;
+    }
+
+    body.dark-mode &:hover {
+        background-color: rgb(87, 101, 255) !important;
+        border-radius: 10px;
+    }
+}
+
+
+.custom-hr {
+    height: 2px;
+    background-color: #4e42f7;
+    border: none;
+    margin: 20px 0;
+    width: 100%;
+    
+    // تغيير اللون عندما يكون الـ body يحتوي على class "dark-mode"
+    body.dark-mode & {
+        background-color: #ffffff!important;
+    }
+}
