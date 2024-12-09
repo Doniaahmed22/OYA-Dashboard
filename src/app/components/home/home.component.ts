@@ -50,14 +50,14 @@ export class HomeComponent implements OnInit {
   constructor(private http: GetApisService) { }
 
 
-  @Output() ready = new EventEmitter<void>();
+  // @Output() ready = new EventEmitter<void>();
 
   ngOnInit() {
 
     // Simulate data loading or setup
-    setTimeout(() => {
-      this.ready.emit(); // Notify that HomeComponent is ready
-    }, 1000); // Adjust delay as needed
+    // setTimeout(() => {
+    //   this.ready.emit(); // Notify that HomeComponent is ready
+    // }, 1000); // Adjust delay as needed
 
     this.loadDashboardData();
 

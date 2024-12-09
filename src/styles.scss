@@ -119,7 +119,7 @@ button:disabled:hover {
   color: rgb(7, 7, 77);
 
   body.dark-mode & {
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255)!important;
 
   }
 }
@@ -384,6 +384,15 @@ button[ng-reflect-message="First page"][disabled] svg path {
 
   body.dark-mode & {
     color: rgb(255, 255, 255);
+  }
+}
+
+
+.mdc-list-item__primary-text{
+  color: rgb(7, 7, 77);
+
+  body.dark-mode & {
+    color: rgb(255, 255, 255)!important;
   }
 }
 
