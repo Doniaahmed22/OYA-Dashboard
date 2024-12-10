@@ -17,11 +17,15 @@
     Product description is required.
   </div>
 
+ 
   <label for="category" class="text">Product Category:</label>
-  <input id="category" name="category" [(ngModel)]="EditProduct.category" class="form-control my-2" required />
+  <select id="category" name="category" [(ngModel)]="EditProduct.category" class="form-control my-2" required>
+    <option *ngFor="let cat of categories" [value]="cat.slug">{{ cat.slug }}</option>
+  </select>
   <div *ngIf="form.controls['category']?.invalid && form.controls['category']?.touched" class="text-danger">
     Product category is required.
   </div>
+
 
   <label for="stock" class="text">Product stock:</label>
   <input id="stock" name="stock" [(ngModel)]="EditProduct.stock" class="form-control my-2" required />
