@@ -396,5 +396,17 @@ button[ng-reflect-message="First page"][disabled] svg path {
   }
 }
 
+.cutword{
+  word-wrap: break-word; /* يلف النص تلقائياً عند انتهاء السطر */
+  word-break: break-word; /* يدعم كسر النص الطويل */
+  white-space: normal; 
+}
 
+
+/* إخفاء العنصر عند الشاشات الصغيرة */
+@media (max-width: 576px) {
+  .imgHead {
+    display: none !important;
+  }
+}
 
