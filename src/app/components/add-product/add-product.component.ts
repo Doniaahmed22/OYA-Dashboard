@@ -37,6 +37,7 @@ export class AddProductComponent implements OnInit{
     if (form.valid) {
       this._GetApisService.addNewProduct(this.product).subscribe({
         next: (response) => {
+          this._ToastrService.success('Product added successfully', 'Success')
           console.log('Product added successfully:', response);
           this._Router.navigate(['/products']); // Redirect to the product list
         },
