@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GetApisService } from 'src/app/services/get-apis.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,9 +12,16 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './add-product.component.html',
   styleUrls: ['./add-product.component.scss']
 })
-export class AddProductComponent {
+export class AddProductComponent implements OnInit{
 
   constructor( private _GetApisService: GetApisService , private _Router:Router, private _ToastrService:ToastrService) { }
+  ngOnInit(): void {
+    this._GetApisService.getCategories().subscribe({
+      next:(response)=>{
+        this.categories = response;
+      }
+    })
+  }
 
   product:any = {
     title: '',
@@ -23,6 +30,7 @@ export class AddProductComponent {
     category: '',
     stock:''
   };
+  categories:any;
 
 
   onSubmit(form: any): void {
